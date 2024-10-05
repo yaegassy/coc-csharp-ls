@@ -4,6 +4,14 @@
 
 ## Install
 
+**CocInstall**:
+
+```vim
+:CocInstall @yaegassy/coc-csharp-ls
+```
+
+> scoped packages
+
 **e.g. vim-plug**:
 
 ```vim
