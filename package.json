@@ -1,0 +1,95 @@
+{
+  "name": "@yaegassy/coc-csharp-ls",
+  "version": "0.0.1",
+  "description": "csharp-language-server (csharp-ls) extension for coc.nvim",
+  "author": "yaegassy <yosstools@gmail.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "keywords": [
+    "coc.nvim",
+    "csharp",
+    "roslyn",
+    "csharp-language-server",
+    "csharp-ls",
+    "vim",
+    "neovim"
+  ],
+  "engines": {
+    "coc": "^0.0.82"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yaegassy/coc-csharp-ls"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "lint": "eslint src --ext ts",
+    "clean": "rimraf lib",
+    "watch": "node esbuild.js --watch",
+    "build": "node esbuild.js",
+    "prepare": "node esbuild.js"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 120,
+    "semi": true
+  },
+  "devDependencies": {
+    "@types/node": "^18.18.4",
+    "@types/which": "^3.0.4",
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1",
+    "coc.nvim": "0.0.83-next.18",
+    "esbuild": "^0.16.17",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.3",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.3.3",
+    "which": "^5.0.0"
+  },
+  "activationEvents": [
+    "onLanguage:cs"
+  ],
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "coc-csharp-ls configuration",
+      "properties": {
+        "csharp-ls.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable coc-csharp-ls extension."
+        },
+        "csharp-ls.path": {
+          "type": "string",
+          "default": "",
+          "description": "Custom executable path for the `csharp-ls` binary"
+        },
+        "csharp-ls.args": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "Additional command-line arguments. Check the arguments using csharp-ls --help."
+        },
+        "csharp-ls.trace.server": {
+          "type": "string",
+          "enum": [
+            "off",
+            "messages",
+            "verbose"
+          ],
+          "default": "off",
+          "description": "Traces the communication between coc.nvim and the csharp-ls."
+        }
+      }
+    },
+    "commands": []
+  },
+  "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
+}
