@@ -7,7 +7,7 @@
 **e.g. vim-plug**:
 
 ```vim
-Plug 'yaegassy/coc-coc-csharp-ls', {'do': 'yarn install --frozen-lockfile'}
+Plug 'yaegassy/coc-csharp-ls', {'do': 'yarn install --frozen-lockfile'}
 ```
 
 ## Note
