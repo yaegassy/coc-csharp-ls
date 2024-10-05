@@ -95,7 +95,7 @@ function registerTextDocumentContentProviders() {
 export async function getCsharpLsBinaryPath() {
   // MEMO: Priority to detect csharp-ls binary
   //
-  // 1. ruff.nativeBinaryPath setting
+  // 1. csharp-ls.path setting
   // 2. current environment
 
   // 1
